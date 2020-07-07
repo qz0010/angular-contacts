@@ -8,6 +8,11 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "styl"
+        },
+        "@schematics/angular": {
+          "component": {
+            "changeDetection": "OnPush"
+          }
         }
       },
       "root": "",

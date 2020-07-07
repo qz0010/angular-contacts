@@ -1,0 +1,12 @@
+<div class="contacts">
+  <div class="contacts__head">
+    <app-contacts-feed-controls (add)="onAdd($event)" (searchChange)="onSearchChange($event)"></app-contacts-feed-controls>
+  </div>
+  <div class="contacts__body">
+    <app-contacts-feed-users
+      [data]="data$ | async | search: (search$ | async): ['username', 'phone']"
+      (editSave)="onEditSave($event)"
+      (remove)="onRemove($event)">
+    </app-contacts-feed-users>
+  </div>
+</div>

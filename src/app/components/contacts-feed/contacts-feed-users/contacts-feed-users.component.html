@@ -1,0 +1,11 @@
+<ul class="contacts__list">
+  <li class="contacts__item" *ngFor="let user of data">
+    <app-contacts-feed-user
+      [user]="user"
+      (openEdit)="openEdit.emit($event)"
+      (editSave)="editSave.emit($event)"
+      (editCancel)="editCancel.emit($event)"
+      (remove)="remove.emit($event)">
+    </app-contacts-feed-user>
+  </li>
+</ul>

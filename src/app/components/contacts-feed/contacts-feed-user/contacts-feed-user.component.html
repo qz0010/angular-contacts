@@ -1,0 +1,38 @@
+<form class="contacts__user" *ngIf="user" #form="ngForm">
+  <div class="contacts__user-row">
+    <div class="contacts__user-item contacts__user-item_user">
+      <ng-template [ngIf]="!editing" [ngIfElse]="editor">
+        <div>{{user.username}}</div>
+        <div>{{user.phone}}</div>
+      </ng-template>
+      <ng-template #editor>
+        <div class="e-form">
+          <div class="e-form__row">
+            <input type="text" name="username" [(ngModel)]="editingMd.username" required placeholder="Username" class="e-form__input">
+          </div>
+          <div class="e-form__row">
+            <input type="tel" name="phone" [(ngModel)]="editingMd.phone" required placeholder="Phone" class="e-form__input">
+          </div>
+        </div>
+      </ng-template>
+    </div>
+    <div class="contacts__user-item">
+      <div class="contacts__user-controls" *ngIf="!editing">
+        <div class="contacts__user-control" (click)="onEditClick()">
+          <i class="material-icons">edit</i>
+        </div>
+        <div class="contacts__user-control" (click)="onRemove()">
+          <i class="material-icons">person_remove</i>
+        </div>
+      </div>
+      <div class="contacts__user-controls" *ngIf="editing">
+        <div class="contacts__user-control" (click)="onEditSave()">
+          <i class="material-icons">save</i>
+        </div>
+        <div class="contacts__user-control" (click)="onEditCancel()">
+          <i class="material-icons">cancel</i>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

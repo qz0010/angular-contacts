@@ -1,0 +1,30 @@
+.controls
+  position: relative;
+  &__items
+    display: flex;
+  &__item
+    &:not(:last-child)
+      margin-right: 1.5rem
+    &_search
+      flex: 1 0 auto
+  &__search
+    &-input
+      box-sizing border-box
+      width: 100%
+      max-width 425px
+      padding: .4rem
+
+  &__icon
+    cursor: pointer;
+    & > i
+      font-size: 1.8rem
+
+  &__sub
+    box-sizing border-box
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1
+    padding: 0 .5rem 1rem
+    background: #fff;

@@ -1,0 +1,19 @@
+<div class="controls">
+  <div class="controls__row">
+    <div class="controls__items">
+      <div class="controls__item controls__item_icons">
+        <div class="controls__icon" (click)="onAdd()">
+          <i class="material-icons">person_add</i>
+        </div>
+      </div>
+      <div class="controls__item controls__item_search">
+        <form class="controls__search-form">
+          <input type="text" name="search" (input)="onSearchChange($event.target.value)" placeholder="Search" class="controls__search-input">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="controls__sub" *ngIf="adding">
+    <app-contacts-feed-controls-form (addSubmit)="onAddSubmit($event)" (addCancel)="onAddCancel()"></app-contacts-feed-controls-form>
+  </div>
+</div>

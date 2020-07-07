@@ -1,0 +1,18 @@
+<div class="login">
+  <div class="login__body">
+    <form class="form" (ngSubmit)="onSubmit()" #form="ngForm">
+      <h4 class="form__title">Вход</h4>
+      <div class="form__body">
+        <div class="form__row">
+          <input type="text" [(ngModel)]="md.login" required name="login" id="" class="form__input">
+        </div>
+        <div class="form__row">
+          <input type="password" [(ngModel)]="md.password" required name="password" class="form__input">
+        </div>
+      </div>
+      <div class="form__footer">
+        <button type="submit" [disabled]="fetching || form.invalid" class="form__btn">Войти</button>
+      </div>
+    </form>
+  </div>
+</div>

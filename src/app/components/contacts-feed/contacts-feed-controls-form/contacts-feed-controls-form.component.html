@@ -1,0 +1,16 @@
+<form class="a-form" (ngSubmit)="onAddSubmit()" #form="ngForm">
+  <div class="a-form__row">
+    <input type="tel" name="phone" [(ngModel)]="md.phone" required placeholder="Phone" class="a-form__input">
+  </div>
+  <div class="a-form__row">
+    <input type="text" name="username" [(ngModel)]="md.username" required placeholder="Username" class="a-form__input">
+  </div>
+  <div class="a-form__row">
+    <button type="submit" [disabled]="form.invalid" class="a-form__btn">
+      <i class="material-icons">done</i>
+    </button>
+    <button type="button" class="a-form__btn" (click)="onAddCancel()">
+      <i class="material-icons">cancel</i>
+    </button>
+  </div>
+</form>
